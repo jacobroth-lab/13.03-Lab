@@ -31,16 +31,48 @@ function drawSnowflakes(canvas) {
 }
 
 function drawSnowText(canvas) {
-   // TODO: Complete the function
+   const ctx = canvas.getContext("2d");
+
+   ctx.font = "80px Verdana";
+   ctx.textAlign = "center";
+   ctx.textBaseline = "top";
+   ctx.fillStyle = "blue";
+
+   ctx.fillText("SNOW", canvas.width / 2, 10);
 
 }
 
 function drawSnowman(canvas) {
-   // TODO: Complete the function
+   const ctx = canvas.getContext("2d");
+
+   ctx.fillStyle = "white"; 
+
+   // bot
+   ctx.beginPath();
+   ctx.arc(150, 200, 50, 0, Math.PI * 2);
+   ctx.fill();
+
+   //Middle
+   ctx.beginPath();
+   ctx.arc(150, 120, 40, 0, Math.PI * 2);
+   ctx.fill();
+
+   // top
+   ctx.beginPath();
+   ctx.arc(150, 60, 25, 0, Math.PI * 2);
+   ctx.fill();
 
 }
 
 function drawSingleFlake(canvas, x, y) {
-   // TODO: Complete the function
+   const ctx = canvas.getContext("2d");
 
+   ctx.fillStyle = "#eee";
+   ctx.beginPath();
+
+   ctx.moveTo(x, y);
+   ctx.lineTo(x + flakeSize / 2, y + flakeSize / 2);
+   ctx.lineTo(x, y + flakeSize);
+   ctx.lineTo(x - flakeSize / 2, y + flakeSize / 2);
+   ctx.fill();
 }
